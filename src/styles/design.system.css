@@ -1,0 +1,58 @@
+@font-face {
+  font-family: 'Poppins Regular';
+  src: url('/fonts/Poppins-Light.ttf') format('truetype');
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Poopins Medium';
+  src: url('/fonts/Poppins-Medium.ttf') format('truetype');
+  font-display: block;
+}
+
+@font-face {
+  font-family: 'Poppins Bold';
+  src: url('/fonts/Poppins-Bold.ttf') format('truetype');
+  font-display: block;
+}
+
+:root {
+  /* Typography */
+  --fontLight: 'Poppins Regular', sans-serif;
+  --fontMedium: 'Poppins Medium', sans-serif;
+  --fontBold: 'Poppins Bold', sans-serif;
+
+  /* Colors */
+  --softWhite: #e7e7e7;
+  --softGray: #b6b6b6;
+  --softpurple: #132c33;
+  --lightPurple: #1f2f98;
+  --softDark: #212124;
+
+  /* Shadows */
+  --shadowedSm: 0 3px 6px rgba(0, 0, 0, 0.16),
+    0 3px 6px rgba(0, 0, 0, 0.23);
+  --shadowedMd: 0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
+  --shadowedLg: 0 14px 28px rgba(0, 0, 0, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+
+  /* Breakpoints */
+  --mobile: 320px;
+  --tablet: 768px;
+  --desktop: 1200px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2em;
+  font-family: var(--fontBold);
+}
+
+p,
+a {
+  font-family: var(--fontLight);
+  font-size: 1rem;
+}

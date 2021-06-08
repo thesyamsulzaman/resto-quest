@@ -1,0 +1,136 @@
+#restaurants-list {
+  height: 100%;
+  position: relative;
+  padding: 4em 0;
+}
+
+.restaurants-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.restaurants-list-header h2 {
+  font-size: 1.5rem;
+  color: var(--softDark);
+}
+
+.restaurants-list-header a {
+  min-width: 100px;
+  font-size: 0.81rem;
+  color: var(--softWhite);
+  background-color: #111;
+  border-radius: 20px;
+  padding: 0 1em;
+  text-decoration: none;
+  text-align: center;
+}
+.restaurants-list-header a:hover {
+  background-color: #222;
+}
+/* .restaurants-list-header h2::after {
+  content: '';
+  display: block;
+  border-bottom: 4px solid var(--softDark);
+  width: 50px;
+  margin: 0.5em auto;
+} */
+.restaurants-list-cards {
+  margin-top: 2em;
+  position: relative;
+  height: auto;
+  min-height: 200px;
+  overflow: scroll;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 1fr);
+  grid-gap: 1.5em;
+  align-items: start;
+}
+
+.restaurant-card {
+  width: 100%;
+  height: 100%;
+
+  flex-basis: 300px;
+
+  box-shadow: var(--shadowedSm);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.restaurant-card-img {
+  position: relative;
+}
+.restaurant-card-img-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1em;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.restaurant-card-img-info-city {
+  background: var(--softDark);
+  padding: 0.3em 0.6em;
+  border-radius: 5px;
+  color: var(--softWhite);
+  font-weight: bold;
+}
+
+.restaurant-card-img-info-rating {
+  background: var(--softWhite);
+  padding: 0.3em 0.6em;
+  border-radius: 5px;
+  color: #222;
+  display: flex;
+  align-items: center;
+}
+
+.restaurant-card-img img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.restaurant-card-body {
+  padding: 0 1em;
+}
+.restaurant-card-body-name {
+  color: var(--softDark);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.restaurant-card-body-description {
+  color: #666;
+  margin-bottom: 1em;
+  max-height: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+@media screen and (min-width: 768px) {
+  .restaurants-list-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .restaurants-list-header a {
+    font-size: 1rem;
+  }
+
+  .restaurants-list-header h2 {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .restaurants-list-cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

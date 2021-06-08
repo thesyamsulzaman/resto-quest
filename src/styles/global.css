@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background-color: green;
+  color: white;
+  padding: 0 .5em;
+  z-index: 201;
+  transition: .1s ease-in;
+  border-radius: 8px;
+  outline: 1px dashed white;
+}
+
+.skip-link:focus {
+  top: 14px;
+  left:14px; 
+  
+}
+
+a {
+  box-sizing: border-box;
+  display:block;
+  min-height: 44px;
+  min-width: 44px;
+  line-height: 44px;
+}

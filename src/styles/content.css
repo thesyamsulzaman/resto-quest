@@ -1,0 +1,129 @@
+#content {
+  margin-top: 1em;
+  height: auto;
+  position: relative;
+  padding: 4em 0;
+}
+
+.content-header {
+}
+.content-header h2 {
+  font-size: 2rem;
+  color: var(--softDark);
+  text-align: left;
+  max-width: fit-content;
+}
+
+.restaurants {
+  margin-top: 2em;
+  position: relative;
+  min-height: 200px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1.5em;
+  align-items: start;
+}
+
+.restaurant-card {
+  width: 100%;
+  height: 100%;
+
+  box-shadow: var(--shadowedSm);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+.restaurant-card-img {
+  position: relative;
+}
+.restaurant-card-img-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1em;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.restaurant-card-img-info-city {
+  background: var(--softDark);
+  padding: 0.3em 0.6em;
+  border-radius: 5px;
+  color: var(--softWhite);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.restaurant-card-img-info-rating {
+  background: var(--softWhite);
+  padding: 0.3em 0.6em;
+  border-radius: 5px;
+  color: #222;
+  display: flex;
+  align-items: center;
+}
+
+.restaurant-card-img img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.restaurant-card-body {
+  padding: 0 1em;
+}
+.restaurant-card-body-name {
+  color: var(--softDark);
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+.restaurant-card-body-description {
+  color: #666;
+  max-height: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.restaurant-card-body-link {
+  font-size: 1rem;
+  background-color: var(--softDark);
+  border-radius: 20px;
+  padding: 0 1em;
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.loading-page {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .restaurants {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .restaurants {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
