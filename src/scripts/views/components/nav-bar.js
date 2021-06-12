@@ -28,6 +28,7 @@ class NavBar extends HTMLElement {
               <li class="header-nav-link">
                 <a href="#/favorites">Favorite</a>
               </li>
+              
               <li class="header-nav-link">
                 <a href="https://github.com/thesyamsulzaman">
                   About Us

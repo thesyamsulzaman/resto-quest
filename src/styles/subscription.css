@@ -1,0 +1,36 @@
+#subscription {
+  padding: 4em 0;
+  height: 100%;
+  position: relative;
+}
+
+.subscription {
+  background-color: var(--softDark);
+  text-align: center;
+  color: #fff;
+  padding: 2em 0;
+  border-radius: 5px;
+  position: relative;
+}
+.subscription-header {
+  font-size: 2rem;
+  color: inherit;
+}
+.subscription-form {
+  display: flex;
+  align-items: stretch;
+  padding: 1.2em 0;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.form-group:first-child {
+  flex: 1;
+}
+.form-control[type='text'] {
+  padding: 1em;
+  width: 100%;
+}
+.form-control[type='submit'] {
+  padding: 1em;
+  width: 100%;
+}

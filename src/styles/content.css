@@ -102,8 +102,131 @@
   width: 100%;
   color: #fff;
   text-decoration: none;
+  margin-top: 1em;
   margin-bottom: 1em;
   text-align: center;
+}
+
+.reviews {
+  position: relative;
+  display: block;
+  box-shadow: var(--shadowedMd);
+  padding: 1em;
+}
+.reviews-header {
+  text-align: center;
+}
+.reviews-list {
+  margin-top: 0.5em;
+}
+.reviews-card {
+  padding: 0.5em;
+}
+
+.reviews-card-name {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.reviews-card-comment {
+  font-size: 0.7rem;
+  color: #444;
+  margin-bottom: 0.1em;
+}
+.reviews-card-date {
+  font-size: 0.6rem;
+  color: #888;
+}
+.reviews-form {
+  border: 1px solid green;
+  margin-top: 0.5em;
+}
+
+.restaurant {
+  position: relative;
+  box-shadow: var(--shadowedMd);
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+.restaurant-jumbotron {
+  position: relative;
+  flex: 1;
+}
+
+.restaurant-jumbotron-img {
+  object-fit: cover;
+  min-height: 400px;
+
+  height: 100%;
+  width: 100%;
+}
+
+.restaurant-jumbotron-card {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  right: 1em;
+  padding: 0.5em 1em;
+
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: var(--shadowedSm);
+}
+.restaurant-jumbotron-card-header {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.1em;
+}
+.restaurant-jumbotron-card-address {
+  margin-left: 0.12em;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.1em;
+}
+.restaurant-jumbotron-card-rating {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5em;
+}
+.restaurant-jumbotron-card-rating,
+.restaurant-jumbotron-card-address {
+  display: flex;
+  align-items: center;
+}
+
+.restaurant-jumbotron-card-description {
+  font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+  -webkit-box-orient: vertical;
+}
+
+.restaurant-menu {
+  padding: 1em;
+  flex: 1;
+}
+.restaurant-menu-header {
+  text-align: center;
+}
+.restaurant-menu-box {
+  padding: 0.5em;
+}
+.restaurant-menu-box-header {
+  font-size: 1.2rem;
+  margin-bottom: 0.5em;
+  font-weight: 900;
+}
+
+.restaurant-menu-box-list li {
+  border-bottom: 1px solid #555;
+  padding: 0.5em 0;
+  list-style: none;
+}
+.restaurant-menu-box-list li p {
+  color: #555;
 }
 
 .loading-page {
@@ -121,9 +244,22 @@
   .restaurants {
     grid-template-columns: repeat(2, 1fr);
   }
+  .reviews-card-name {
+    font-size: 1rem;
+  }
+  .reviews-card-comment {
+    font-size: 1rem;
+  }
+  .reviews-card-date {
+    font-size: 0.9rem;
+  }
 }
 @media screen and (min-width: 1200px) {
   .restaurants {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .restaurant {
+    flex-direction: row;
   }
 }

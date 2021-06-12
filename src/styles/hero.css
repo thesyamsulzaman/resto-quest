@@ -15,7 +15,7 @@
   right: 0;
   bottom: 0;
 
-  background-image: url('/images/hero.webp');
+  background-image: url('../public/images/hero.webp');
   background-size: cover;
   background-position: 0% 30%;
   background-repeat: no-repeat;

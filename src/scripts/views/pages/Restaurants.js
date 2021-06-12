@@ -3,7 +3,7 @@ const Restaurants = {
     return `
       <section id="content">
         <div class="content-header container">
-          <h2>Explore</h2>
+          <h2>Explore</h2>         
         </div>
         
         <div class="restaurants container">

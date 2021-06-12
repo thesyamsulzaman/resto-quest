@@ -2,10 +2,15 @@
 @import 'global.css';
 @import 'design.system.css';
 
+/* Components */
+@import 'forms.css';
+
 /* Layouts */
 @import 'header.css';
 @import 'hero.css';
 @import 'features.css';
 @import 'restaurants.list.css';
 @import 'content.css';
+@import 'feature.css';
+@import 'subscription.css';
 @import 'footer.css';

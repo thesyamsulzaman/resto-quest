@@ -1,0 +1,17 @@
+{
+  "name" : "Resto Quest",
+  "short_name": "Resto Quest",
+  "description": "Find top-notch Restaurants anywhere you go",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#212124",
+  "icons": [
+    {
+      "src": "/icons/icon-150x150.svg",
+      "sizes": "150x150",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
