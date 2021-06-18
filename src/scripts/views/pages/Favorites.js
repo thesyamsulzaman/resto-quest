@@ -1,36 +1,44 @@
+/* eslint-disable no-use-before-define */
+import FavoriteModel from '../../models/favorite';
+import PageLoader from '../../utils/page-loader';
+import ErrorPageTemplate from '../templates/ErrorPage';
+import FavoritesTemplate from '../templates/Favorites';
+
 const Favorites = {
   async render() {
     return `
-      <section id="content">
-        <div class="content-header container">
-          <h2>Favorite</h2>
-        </div>
-
-        <div class="restaurants container">
-        
+      <section id="content">     
+        <div class="container containerWithLoader">        
         </div>
       </section>
     `;
   },
 
   async afterRender() {
-    const container = document.querySelector('.restaurants');
+    const container = document.querySelector('#content .container');
 
-    container.innerHTML = `<loading-page></loading-page>`;
+    PageLoader.show();
 
-    // const response = await fetch(
-    //   'https://restaurant-api.dicoding.dev/list'
-    // );
-    // const jsonResponse = await response.json();
-    // const { restaurants } = jsonResponse;
+    try {
+      const restaurants = await FavoriteModel.getAllRestaurants();
+      PageLoader.hide();
+      renderResult(restaurants);
+    } catch (err) {
+      console.log('Error : ', err);
+      fallBackResult(err);
+    }
 
-    // container.innerHTML = ``;
-    // restaurants.forEach((restaurant) => {
-    //   const card = document.createElement('restaurant-card');
-    //   card.restaurant = restaurant;
+    function renderResult(restaurants) {
+      container.innerHTML = FavoritesTemplate();
+      const restaurantsWrapper = document.querySelector(
+        'restaurants-wrapper'
+      );
+      restaurantsWrapper.restaurants = restaurants;
+    }
 
-    //   container.appendChild(card);
-    // });
+    function fallBackResult() {
+      container.innerHTML = ErrorPageTemplate();
+    }
   },
 };
 

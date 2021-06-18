@@ -5,7 +5,17 @@ import {
   faStar,
   faMapMarkerAlt,
   faTimes,
+  faCheckCircle,
+  faPlus,
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(faHamburger, faBars, faStar, faMapMarkerAlt, faTimes);
+library.add(
+  faHamburger,
+  faBars,
+  faStar,
+  faMapMarkerAlt,
+  faTimes,
+  faCheckCircle,
+  faPlus
+);
 dom.watch();

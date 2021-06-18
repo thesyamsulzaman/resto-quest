@@ -1,8 +1,8 @@
 #content {
-  margin-top: 1em;
+  margin-top: 3em;
   height: auto;
   position: relative;
-  padding: 4em 0;
+  padding: 1.5em 0;
 }
 
 .content-header {
@@ -14,10 +14,11 @@
   max-width: fit-content;
 }
 
+restaurants-wrapper,
 .restaurants {
-  margin-top: 2em;
   position: relative;
   min-height: 200px;
+  padding: 1em 0;
 
   display: grid;
   grid-template-columns: 1fr;
@@ -39,10 +40,9 @@
 }
 .restaurant-card-img-info {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1em;
+  bottom: 0.8em;
+  left: 0.5em;
+  right: 0.5em;
 
   display: flex;
   justify-content: space-between;
@@ -110,8 +110,9 @@
 .reviews {
   position: relative;
   display: block;
-  box-shadow: var(--shadowedMd);
+  box-shadow: var(--shadowedSm);
   padding: 1em;
+  border-radius: 5px;
 }
 .reviews-header {
   text-align: center;
@@ -120,34 +121,36 @@
   margin-top: 0.5em;
 }
 .reviews-card {
-  padding: 0.5em;
+  padding: 0.6em 0;
 }
 
 .reviews-card-name {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-weight: bold;
 }
 .reviews-card-comment {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   color: #444;
   margin-bottom: 0.1em;
 }
 .reviews-card-date {
-  font-size: 0.6rem;
-  color: #888;
+  font-size: 0.8rem;
+  color: #222;
 }
 .reviews-form {
-  border: 1px solid green;
   margin-top: 0.5em;
+  border-radius: 5px;
 }
 
 .restaurant {
   position: relative;
-  box-shadow: var(--shadowedMd);
+  box-shadow: var(--shadowedSm);
 
   display: flex;
   flex-direction: column;
   margin-bottom: 1em;
+  border-radius: 5px;
+  overflow: hidden;
 }
 .restaurant-jumbotron {
   position: relative;
@@ -156,7 +159,8 @@
 
 .restaurant-jumbotron-img {
   object-fit: cover;
-  min-height: 400px;
+  min-height: 350px;
+  max-height: 380px;
 
   height: 100%;
   width: 100%;
@@ -176,7 +180,6 @@
 .restaurant-jumbotron-card-header {
   font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 0.1em;
 }
 .restaurant-jumbotron-card-address {
   margin-left: 0.12em;
@@ -188,6 +191,17 @@
   font-size: 0.9rem;
   color: #555;
   margin-bottom: 0.5em;
+}
+.restaurant-jumbotron-card-categories {
+  margin: 0.6em 0;
+}
+.category-label {
+  padding: 0.3em 0.5em;
+  color: #fff;
+  background-color: #555;
+  margin-right: 0.5em;
+  border-radius: 5px;
+  font-size: 0.8rem;
 }
 .restaurant-jumbotron-card-rating,
 .restaurant-jumbotron-card-address {
@@ -205,14 +219,16 @@
 }
 
 .restaurant-menu {
-  padding: 1em;
+  padding: 0.51em;
   flex: 1;
 }
-.restaurant-menu-header {
-  text-align: center;
+.restaurant-menu-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 .restaurant-menu-box {
   padding: 0.5em;
+  flex: 1;
 }
 .restaurant-menu-box-header {
   font-size: 1.2rem;
@@ -238,9 +254,36 @@
 
   display: flex;
   justify-content: center;
+  padding: 1em 0;
+}
+
+.favoriteButton {
+  margin: 0.5em 0;
+  padding: 0.7em;
+  border: none;
+  background-color: var(--softDark);
+  color: #fff;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
+.favoriteButton.active {
+  opacity: 0.8;
+}
+
+.errorPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 1em 0;
+}
+.errorPage h2 {
+  max-width: 300px;
+  text-align: center;
 }
 
 @media screen and (min-width: 768px) {
+  restaurants-wrapper,
   .restaurants {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -255,11 +298,12 @@
   }
 }
 @media screen and (min-width: 1200px) {
+  restaurants-wrapper,
   .restaurants {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .restaurant {
+  .restaurant-menu-wrapper {
     flex-direction: row;
   }
 }

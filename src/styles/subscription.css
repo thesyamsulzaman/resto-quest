@@ -18,7 +18,7 @@
 }
 .subscription-form {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   padding: 1.2em 0;
   max-width: 90%;
   margin: 0 auto;

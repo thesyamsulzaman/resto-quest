@@ -19,7 +19,13 @@ class RestaurantCard extends HTMLElement {
     this.innerHTML = `
       <div class="restaurant-card" data-key="${id}">
         <div class="restaurant-card-img">
-          <img class="" height="300" width="200" src="https://restaurant-api.dicoding.dev/images/small/${pictureId}" alt="Image of ${name}" />
+          <img 
+            class="" 
+            height="300" 
+            width="200" 
+            src="https://restaurant-api.dicoding.dev/images/small/${pictureId}" 
+            alt="Image of ${name}" 
+          />
           <div class="restaurant-card-img-info">
             <p class="restaurant-card-img-info-city">
               <i class="fas fa-map-marker-alt fa-sm" style="margin-right: 0.5em"></i>

@@ -1,0 +1,33 @@
+.form-group {
+  margin-bottom: 1em;
+}
+.form-label {
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.form-control {
+  font-family: inherit;
+}
+textarea[class='form-control'] {
+  min-height: 100px;
+  padding: 0.9em;
+}
+.form-control[type='text'],
+.form-control[type='submit'],
+textarea[class='form-control'] {
+  display: block;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.submit-button {
+  font-size: 1rem;
+  background-color: var(--softDark);
+  border-radius: 5px;
+  padding: 0.8em;
+  width: 100%;
+  color: #fff;
+  text-decoration: none;
+  text-align: center;
+}

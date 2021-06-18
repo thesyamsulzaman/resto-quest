@@ -1,31 +1,65 @@
+/* eslint-disable no-use-before-define */
 import UrlParser from '../../routes/url-parser';
-import RestaurantDetail from '../templates/RestaurantDetail';
+import RestaurantModel from '../../models/restaurant';
+
+import ErrorPageTemplate from '../templates/ErrorPage';
+import RestaurantDetailTemplate from '../templates/RestaurantDetail';
+import PageLoader from '../../utils/page-loader';
 
 const Detail = {
   async render() {
     return `
       <section id="content">  
-       <div class="restaurant container">
-        
+       <div class="container containerWithLoader">
+
        </div>             
-      </section>
+      </section>      
     `;
   },
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const container = document.querySelector('.restaurant');
+    const container = document.querySelector('#content .container');
 
-    container.innerHTML = '<loading-page></loading-page>';
+    PageLoader.show();
 
-    const response = await fetch(
-      `https://restaurant-api.dicoding.dev/detail/${url.id}`
-    );
+    try {
+      const restaurant = await RestaurantModel.get(url.id);
+      PageLoader.hide();
+      renderResult(restaurant);
 
-    const jsonResponse = await response.json();
-    const { restaurant } = jsonResponse;
+      const reviewForm = document.querySelector('review-form');
+      reviewForm.restaurant = restaurant;
+      reviewForm.submitEvent = onReviewFormSubmit;
+    } catch (err) {
+      fallBackResult(err);
+    }
 
-    container.innerHTML = RestaurantDetail(restaurant);
+    function renderResult(restaurant) {
+      container.innerHTML = RestaurantDetailTemplate(restaurant);
+      container.querySelector('favorite-button').restaurant =
+        restaurant;
+    }
+
+    function fallBackResult(err) {
+      console.log('Error : ', err);
+      container.innerHTML = ErrorPageTemplate();
+    }
+
+    async function onReviewFormSubmit(event) {
+      event.preventDefault();
+      if (this.name === '' && this.review === '') return;
+
+      const response = await RestaurantModel.addReview({
+        id: url.id,
+        name: this.name,
+        review: this.review,
+      });
+
+      const restaurant = this.getRestaurant;
+      restaurant.customerReviews = response.customerReviews;
+      renderResult(restaurant);
+    }
   },
 };
 
