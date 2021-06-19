@@ -27,10 +27,10 @@
   flex: 1;
 }
 .form-control[type='text'] {
-  padding: 1em;
+  padding: 0 1em;
   width: 100%;
 }
 .form-control[type='submit'] {
-  padding: 1em;
+  padding: 0 1em;
   width: 100%;
 }

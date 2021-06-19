@@ -25,6 +25,7 @@ class RestaurantCard extends HTMLElement {
             width="200" 
             src="https://restaurant-api.dicoding.dev/images/small/${pictureId}" 
             alt="Image of ${name}" 
+            crossorigin="anonymous"
           />
           <div class="restaurant-card-img-info">
             <p class="restaurant-card-img-info-city">

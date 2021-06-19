@@ -29,33 +29,13 @@
   background-color: #222;
 }
 
-.restaurants-list-cards {
-  margin-top: 2em;
-  position: relative;
-  height: auto;
-  min-height: 200px;
-  overflow: scroll;
-
-  display: grid;
-  grid-template-columns: repeat(auto-fill, 1fr);
-  grid-gap: 1.5em;
-  align-items: start;
-}
 
 @media screen and (min-width: 768px) {
-  .restaurants-list-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
   .restaurants-list-header a {
     font-size: 1rem;
   }
 
   .restaurants-list-header h2 {
     font-size: 2rem;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .restaurants-list-cards {
-    grid-template-columns: repeat(3, 1fr);
   }
 }

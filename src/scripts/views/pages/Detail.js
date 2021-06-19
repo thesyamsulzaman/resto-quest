@@ -49,16 +49,18 @@ const Detail = {
     async function onReviewFormSubmit(event) {
       event.preventDefault();
       if (this.name === '' && this.review === '') return;
-
-      const response = await RestaurantModel.addReview({
-        id: url.id,
-        name: this.name,
-        review: this.review,
-      });
-
-      const restaurant = this.getRestaurant;
-      restaurant.customerReviews = response.customerReviews;
-      renderResult(restaurant);
+      try {
+        const response = await RestaurantModel.addReview({
+          id: url.id,
+          name: this.name,
+          review: this.review,
+        });
+        const restaurant = this.getRestaurant;
+        restaurant.customerReviews = response.customerReviews;
+        renderResult(restaurant);
+      } catch (error) {
+        console.log('Error : ', error);
+      }
     }
   },
 };

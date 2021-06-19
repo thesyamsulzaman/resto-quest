@@ -259,7 +259,7 @@ restaurants-wrapper,
 
 .favoriteButton {
   margin: 0.5em 0;
-  padding: 0.7em;
+  padding: 0 0.7em;
   border: none;
   background-color: var(--softDark);
   color: #fff;

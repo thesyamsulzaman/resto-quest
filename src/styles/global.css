@@ -36,10 +36,9 @@ body {
 .skip-link:focus {
   top: 14px;
   left:14px; 
-  
 }
 
-a {
+a, input, button {
   box-sizing: border-box;
   display:block;
   min-height: 44px;
