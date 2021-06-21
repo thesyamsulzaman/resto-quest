@@ -8,6 +8,7 @@ class App {
     this._initialAppShell();
   }
 
+  // I might use this sometime in the future
   _initialAppShell() {}
 
   async renderPage() {

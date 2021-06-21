@@ -4,9 +4,10 @@ const PageLoader = {
       '.containerWithLoader'
     ).innerHTML = `<loading-page></loading-page>`;
   },
+
   hide() {
     document.querySelector('.containerWithLoader').innerHTML = ``;
-  }
+  },
 };
 
 export default PageLoader;
