@@ -7,6 +7,7 @@ import {
   faTimes,
   faCheckCircle,
   faPlus,
+  faExclamationCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(
@@ -16,6 +17,7 @@ library.add(
   faMapMarkerAlt,
   faTimes,
   faCheckCircle,
-  faPlus
+  faPlus,
+  faExclamationCircle
 );
 dom.watch();

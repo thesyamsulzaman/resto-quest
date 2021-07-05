@@ -43,9 +43,6 @@ const RestaurantDetail = ({
           ${rating} ( ${customerReviews.length} Reviews )
         </p>            
       
-        <p class="restaurant-jumbotron-card-description">
-          ${description}
-        </p> 
 
         <favorite-button></favorite-button>     
 
@@ -105,7 +102,7 @@ const RestaurantDetail = ({
     .join('')}
   </div>
     
-  <div class="reviews-form">  
+  <div class="reviews-form containerWithLoader">  
     <review-form></review-form>
   </div>
 

@@ -4,10 +4,12 @@ const Subscription = () => `
       <h2 class="subscription-header">Subscribe to our Newsletter</h2>
       <form action="" class="subscription-form">
         <div class="form-group">                   
-          <input type="email" name="email" class="form-control" placeholder="youremail@gmail.com"/>             
+          <label for="email">
+            <input type="email" name="email" id="email" class="form-control" placeholder="youremail@gmail.com"/>             
+          </label>
         </div>  
         <div class="form-group">          
-          <input class="form-control" type="submit" value="Subscribe" />
+          <input class="form-control" id="subscribe" type="submit" value="Subscribe" />
         </div>         
       </form>
     </div>       

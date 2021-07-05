@@ -24,6 +24,14 @@ class ReviewForm extends HTMLElement {
     return this.querySelector('#review').value;
   }
 
+  set name(newValue) {
+    this.querySelector('#name').value = newValue;
+  }
+
+  set review(newValue) {
+    this.querySelector('#review').value = newValue;
+  }
+
   get getRestaurant() {
     return this._restaurant;
   }

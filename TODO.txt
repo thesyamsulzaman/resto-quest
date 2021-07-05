@@ -1,0 +1,32 @@
+TODOS
+
+~ Integration Testing
++ Like Button Testing
+  - [] Attach every Like Button Container to every test
+  - [] Write Test Factories with Button Presenter Object
+
+
+~ End-to-end Testing
++ Like Button
++ Unlike Button
+
+
+~ Performance Tweak
+
++ Fonts 
+  - [] Font from CDN
+
++ Bundle JS
+  - [] Code Spliting
+  - [] Minify 
+  - [] Source Map
+
++ Home Page
+  - [] Skeleton for Hero Image
+  - [] Optimize Hero Image
+  - [] Skeleton for Feature Images
+  - [] Optimize Feature Images
+
++ Restaurants Page
+  - [] Skeleton for Card Images
+  - [] Implement Lazy Load

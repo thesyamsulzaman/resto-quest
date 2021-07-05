@@ -4,6 +4,7 @@
 
 /* Components */
 @import 'forms.css';
+@import 'snackbars.css';
 
 /* Layouts */
 @import 'header.css';

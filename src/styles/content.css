@@ -170,7 +170,7 @@ restaurants-wrapper,
   position: absolute;
   bottom: 1em;
   left: 1em;
-  right: 1em;
+  /*right: 1em;*/
   padding: 0.5em 1em;
 
   background-color: #fff;
@@ -258,6 +258,8 @@ restaurants-wrapper,
 }
 
 .favoriteButton {
+  display:block;
+  width: 100%;
   margin: 0.5em 0;
   padding: 0 0.7em;
   border: none;

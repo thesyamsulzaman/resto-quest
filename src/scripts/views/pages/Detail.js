@@ -4,7 +4,9 @@ import RestaurantModel from '../../models/restaurant';
 
 import ErrorPageTemplate from '../templates/ErrorPage';
 import RestaurantDetailTemplate from '../templates/RestaurantDetail';
+
 import PageLoader from '../../utils/page-loader';
+import SnackBarMessage from '../../utils/snackbar-initiator';
 
 const Detail = {
   async render() {
@@ -48,17 +50,41 @@ const Detail = {
 
     async function onReviewFormSubmit(event) {
       event.preventDefault();
-      if (this.name === '' && this.review === '') return;
+
+      if (this.name === '' && this.review === '') {
+        SnackBarMessage.init({
+          type: 'failed',
+          messageText: 'Please fill up the forms',
+        });
+        return;
+      }
+
       try {
         const response = await RestaurantModel.addReview({
           id: url.id,
           name: this.name,
           review: this.review,
         });
+
         const restaurant = this.getRestaurant;
         restaurant.customerReviews = response.customerReviews;
         renderResult(restaurant);
+
+        this.name = '';
+        this.review = '';
+
+        SnackBarMessage.init({
+          type: 'success',
+          messageText: 'Review submitted',
+        });
       } catch (error) {
+        this.name = '';
+        this.review = '';
+
+        SnackBarMessage.init({
+          type: 'failed',
+          messageText: 'Review Submitting failed',
+        });
         console.log('Error : ', error);
       }
     }

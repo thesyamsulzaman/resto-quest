@@ -5,3 +5,4 @@ import './loading-page';
 import './favorite-button';
 import './restaurants-wrapper';
 import './review-form';
+import './snackbar-message';
