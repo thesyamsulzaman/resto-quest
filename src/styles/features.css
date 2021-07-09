@@ -21,6 +21,8 @@
   position: relative;
   overflow: hidden;
 }
+.feature-card {
+}
 
 .feature-card:hover {
   transform: translateY(10px);
@@ -50,11 +52,19 @@
 }
 
 .feature-card-img {
+  min-height: 380px;
+  min-width: 300px;
   height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: 8px;
 }
+
+/*.feature-card.loading {*/
+/*background: linear-gradient(90deg, transparent, #ccc , transparent);*/
+/*transform: translateX(-100%);*/
+/*animation: loading 1s infinite;*/
+/*}*/
 
 .feature-card-description {
   padding: 0.5em 0.8em;

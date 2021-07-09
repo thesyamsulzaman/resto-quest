@@ -20,12 +20,11 @@ class RestaurantCard extends HTMLElement {
       <div class="restaurant-card" data-key="${id}">
         <div class="restaurant-card-img">
           <img 
-            class="" 
+            class="lazyload" 
+            data-src="https://restaurant-api.dicoding.dev/images/small/${pictureId}"
             height="300" 
             width="200" 
-            src="https://restaurant-api.dicoding.dev/images/small/${pictureId}" 
             alt="Image of ${name}" 
-            crossorigin="anonymous"
           />
           <div class="restaurant-card-img-info">
             <p class="restaurant-card-img-info-city">

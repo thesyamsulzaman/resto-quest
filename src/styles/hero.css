@@ -5,6 +5,8 @@
 
   height: 100vh;
   width: 100%;
+  background-color: #f4f4f4;
+  overflow: hidden;
 }
 
 #hero::before {
@@ -15,11 +17,29 @@
   right: 0;
   bottom: 0;
 
-  background-image: url('../public/images/hero.webp');
+  background-image: url('../public/images/hero.jpg');
   background-size: cover;
   background-position: 0% 30%;
   background-repeat: no-repeat;
   background-attachment: scroll;
+
+  min-height: 100vh;
+  height: 100%;
+  width: 100%;
+}
+
+#hero.loading::before {
+  background-image: none;
+}
+
+#hero.loading::after {
+  content: 'anjing benat';
+  display: block;
+  background: linear-gradient(90deg, transparent, #ccc, transparent);
+  transform: translateX(-100%);
+  animation: loading 1s infinite;
+
+  min-height: 100vh;
   height: 100%;
   width: 100%;
 }

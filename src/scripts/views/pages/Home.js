@@ -23,11 +23,11 @@ const Home = {
   async afterRender() {
     const container = document.querySelector('.containerWithLoader');
 
-    PageLoader.show();
+    // PageLoader.show();
 
     try {
       const restaurants = await RestaurantModel.getAll();
-      PageLoader.hide();
+      // PageLoader.hide();
       renderResult(restaurants.slice(0, 6));
     } catch (err) {
       fallbackResult(err);
@@ -39,12 +39,15 @@ const Home = {
       );
 
       restaurantsWrapper.restaurants = restaurants;
-      container.append(restaurantsWrapper);
+      container.parentNode.replaceChild(
+        restaurantsWrapper,
+        container
+      );
     }
 
     function fallbackResult(err) {
       console.log('Error : ', err);
-      container.innerHTML = ErrorPageTemplate;
+      container.innerHTML = ErrorPageTemplate();
     }
   },
 };

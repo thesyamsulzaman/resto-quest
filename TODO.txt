@@ -1,32 +1,42 @@
 TODOS
 
 ~ Integration Testing
-+ Like Button Testing
-  - [] Attach every Like Button Container to every test
-  - [] Write Test Factories with Button Presenter Object
+
+  + Like Button Testing
+    - [x] Button show "Add to favorite" when the restaurant hasnt been liked before
+    - [x] Button should not show "Add to favorite" when the restaurant hasnt been liked before
+    - [x] Button should be able to save restaurant to the favorite
+    - [x] Button should not be able to save restaurant to the favorite if the object is invalid
+    - [x] Button should not be able to save restaurant to the favorite if the object has been saved
+
+  + Unliking Button Testing
+    - [] Button should show "Remove from favorite" when the restaurant has been liked before
+    - [] Button should not show "Add from favorite" when the restaurant has been liked before
+    - [] Button should be able to remove restaurant from favorite
+    - [] Button should be able to remove restaurant from favorite
 
 
 ~ End-to-end Testing
-+ Like Button
-+ Unlike Button
+  + Like Button
+  + Unlike Button
 
 
 ~ Performance Tweak
 
-+ Fonts 
-  - [] Font from CDN
+  + Fonts 
+    - [] Font from CDN
 
-+ Bundle JS
-  - [] Code Spliting
-  - [] Minify 
-  - [] Source Map
+  + Bundle JS
+    - [] Code Spliting
+    - [] Minify 
+    - [] Source Map
 
-+ Home Page
-  - [] Skeleton for Hero Image
-  - [] Optimize Hero Image
-  - [] Skeleton for Feature Images
-  - [] Optimize Feature Images
+  + Home Page
+    - [x] Skeleton for Hero Image
+    - [x] Optimize Hero Image
+    - [x] Skeleton for Feature Images
+    - [x] Optimize Feature Images
 
-+ Restaurants Page
-  - [] Skeleton for Card Images
-  - [] Implement Lazy Load
+  + Restaurants Page
+    - [x] Skeleton for Card Images
+    - [x] Implement Lazy Load

@@ -5,8 +5,8 @@ const Subscription = () => `
       <form action="" class="subscription-form">
         <div class="form-group">                   
           <label for="email">
-            <input type="email" name="email" id="email" class="form-control" placeholder="youremail@gmail.com"/>             
           </label>
+          <input type="email" name="email" id="email" class="form-control" placeholder="youremail@gmail.com"/>             
         </div>  
         <div class="form-group">          
           <input class="form-control" id="subscribe" type="submit" value="Subscribe" />

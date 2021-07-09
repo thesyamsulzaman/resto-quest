@@ -9,6 +9,14 @@ class RestauranstWrapper extends HTMLElement {
     this.render();
   }
 
+  renderPlaceholder() {
+    let template = this.innerHTML;
+
+    template += `<h1> Template goes here </h1>`;
+
+    return template;
+  }
+
   render() {
     this.innerHTML = '';
     this._restaurants.forEach((restaurant) => {

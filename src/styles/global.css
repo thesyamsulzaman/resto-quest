@@ -45,3 +45,10 @@ a, input, button {
   min-width: 44px;
   line-height: 44px;
 }
+
+
+@keyframes loading {
+  100% {
+    transform: translateX(100%);
+  }
+}

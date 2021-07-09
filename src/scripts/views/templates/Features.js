@@ -6,6 +6,8 @@ const Features = () => `
         <img
           class="feature-card-img"
           src="./images/feature_1.jpg"
+          height="380"
+          width="300"
           alt=""
         />
         <div class="feature-card-description">
@@ -22,6 +24,8 @@ const Features = () => `
         <img
           class="feature-card-img"
           src="./images/feature_2.jpg"
+          height="380"
+          width="300"
           alt=""
         />
         <div class="feature-card-description">
@@ -38,6 +42,8 @@ const Features = () => `
         <img
           class="feature-card-img"
           src="./images/feature_3.jpg"
+          height="380"
+          width="300"
           alt=""
         />
         <div class="feature-card-description">

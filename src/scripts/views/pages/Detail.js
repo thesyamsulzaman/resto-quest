@@ -7,12 +7,14 @@ import RestaurantDetailTemplate from '../templates/RestaurantDetail';
 
 import PageLoader from '../../utils/page-loader';
 import SnackBarMessage from '../../utils/snackbar-initiator';
+import FavoriteButton from '../../utils/favorite-button-initiator';
 
 const Detail = {
   async render() {
     return `
       <section id="content">  
        <div class="container containerWithLoader">
+        
 
        </div>             
       </section>      
@@ -39,8 +41,17 @@ const Detail = {
 
     function renderResult(restaurant) {
       container.innerHTML = RestaurantDetailTemplate(restaurant);
+      // FavoriteButton.init({
+      // buttonContainer: document.querySelector(
+      // '#likeButtonContainer'
+      // ),
+      // restaurant,
+      // });
       container.querySelector('favorite-button').restaurant =
         restaurant;
+
+      console.log('Button rendered');
+      console.log(container.querySelector('favorite-button'));
     }
 
     function fallBackResult(err) {
@@ -51,7 +62,7 @@ const Detail = {
     async function onReviewFormSubmit(event) {
       event.preventDefault();
 
-      if (this.name === '' && this.review === '') {
+      if (this.name === '' || this.review === '') {
         SnackBarMessage.init({
           type: 'failed',
           messageText: 'Please fill up the forms',
@@ -70,23 +81,27 @@ const Detail = {
         restaurant.customerReviews = response.customerReviews;
         renderResult(restaurant);
 
-        this.name = '';
-        this.review = '';
+        clearForm();
 
         SnackBarMessage.init({
           type: 'success',
           messageText: 'Review submitted',
         });
       } catch (error) {
-        this.name = '';
-        this.review = '';
+        clearForm();
 
         SnackBarMessage.init({
           type: 'failed',
           messageText: 'Review Submitting failed',
         });
+
         console.log('Error : ', error);
       }
+    }
+
+    function clearForm() {
+      document.querySelector('#name').value = '';
+      document.querySelector('#review').value = '';
     }
   },
 };

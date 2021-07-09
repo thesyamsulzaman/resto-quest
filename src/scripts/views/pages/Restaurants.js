@@ -2,14 +2,19 @@
 
 import RestaurantModel from '../../models/restaurant';
 import PageLoader from '../../utils/page-loader';
+
 import ErrorPageTemplate from '../templates/ErrorPage';
-import RestaurantsTemplate from '../templates/Restaurants';
+import {
+  RestaurantsTemplate,
+  RestaurantsSkeleton,
+} from '../templates/Restaurants';
 
 const Restaurants = {
   async render() {
     return `
       <section id="content">                           
         <div class="container containerWithLoader">          
+          ${RestaurantsSkeleton()}
         </div>          
       </section>
     `;
@@ -17,11 +22,11 @@ const Restaurants = {
 
   async afterRender() {
     const container = document.querySelector('#content .container');
-    PageLoader.show();
+    //PageLoader.show();
 
     try {
       const restaurants = await RestaurantModel.getAll();
-      PageLoader.hide();
+      //PageLoader.hide();
       renderResult(restaurants);
     } catch (err) {
       console.log('Error : ', err);

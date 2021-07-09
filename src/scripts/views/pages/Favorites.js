@@ -2,13 +2,19 @@
 import FavoriteModel from '../../models/favorite';
 import PageLoader from '../../utils/page-loader';
 import ErrorPageTemplate from '../templates/ErrorPage';
-import FavoritesTemplate from '../templates/Favorites';
+
+import {
+  FavoritesTemplate,
+  FavoritesSkeleton,
+  FavoritesEmpty,
+} from '../templates/Favorites';
 
 const Favorites = {
   async render() {
     return `
       <section id="content">     
         <div class="container containerWithLoader">        
+          ${FavoritesSkeleton()}
         </div>
       </section>
     `;
@@ -17,12 +23,16 @@ const Favorites = {
   async afterRender() {
     const container = document.querySelector('#content .container');
 
-    PageLoader.show();
+    //PageLoader.show();
 
     try {
       const restaurants = await FavoriteModel.getAllRestaurants();
-      PageLoader.hide();
-      renderResult(restaurants);
+      //PageLoader.hide();
+      if (restaurants.length > 0) {
+        renderResult(restaurants);
+      } else {
+        renderEmptyResult();
+      }
     } catch (err) {
       console.log('Error : ', err);
       fallBackResult(err);
@@ -34,6 +44,10 @@ const Favorites = {
         'restaurants-wrapper'
       );
       restaurantsWrapper.restaurants = restaurants;
+    }
+
+    function renderEmptyResult() {
+      container.innerHTML = FavoritesEmpty();
     }
 
     function fallBackResult() {

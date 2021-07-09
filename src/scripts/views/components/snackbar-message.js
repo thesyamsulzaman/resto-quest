@@ -13,21 +13,6 @@ class SnackBarMessage extends HTMLElement {
         messageText: '',
       },
     };
-
-    console.log('UI Constructed');
-  }
-
-  connectedCallback() {
-    console.log('UI Connected');
-  }
-
-  attributeChangedCallback(name, oldValue, newValue) {
-    this[name] = newValue;
-    this.render(this.type);
-  }
-
-  static get observedAttributes() {
-    return ['type'];
   }
 
   set message({ type, messageText }) {

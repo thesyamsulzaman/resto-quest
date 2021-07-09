@@ -5,19 +5,32 @@ class FavoriteButton extends HTMLElement {
   constructor() {
     super();
     this.isAdded = false;
-    this._movie = null;
+    this._restaurant = null;
     this.className = this.getAttribute('class') || '';
-    this.addEventListener('click', (e) => this.clickEvent(e));
   }
 
-  set restaurant(restaurant) {
-    this._restaurant = restaurant;
-    this.renderButton();
+  connectedCallback() {
+    this.addEventListener('click', (e) => this.clickEvent(e));
+    this.render();
+  }
+
+  async clickEvent(e) {
+    e.stopPropagation();
+    await this.toggleLike();
   }
 
   async toggleLike() {
     await this.renderData();
-    await this.renderButton();
+    await this.renderState();
+    await this.render();
+  }
+
+  set restaurant(restaurant) {
+    this._restaurant = restaurant;
+    this.renderState().then(() => {
+      this.render();
+      //console.log(this);
+    });
   }
 
   async renderData() {
@@ -29,12 +42,7 @@ class FavoriteButton extends HTMLElement {
     }
   }
 
-  async clickEvent(e) {
-    e.stopPropagation();
-    await this.toggleLike();
-  }
-
-  async renderButton() {
+  async renderState() {
     const { id } = this._restaurant;
     if (await this.restaurantExists(id)) {
       this.isAdded = true;
@@ -43,7 +51,6 @@ class FavoriteButton extends HTMLElement {
     }
 
     this.className = this.isAdded ? 'active' : '';
-    this.render();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -63,7 +70,11 @@ class FavoriteButton extends HTMLElement {
   render() {
     this.innerHTML = `
 			<button 
-        aria-label="like this movie" 
+        aria-label="${
+          this.isAdded
+            ? 'unlike this restaurant'
+            : 'like this restaurant'
+        }" 
         class="favoriteButton ${this.className}">              
 				${
           this.isAdded

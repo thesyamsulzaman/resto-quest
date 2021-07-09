@@ -1,4 +1,7 @@
+import 'lazysizes';
 import 'regenerator-runtime'; /* for async await transpile */
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
+
 import './lib/icons';
 import './views/components';
 import '../styles/main.css';
