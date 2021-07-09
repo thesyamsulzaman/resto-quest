@@ -20,7 +20,7 @@ describe('Unliking a restaurant', () => {
     const favoriteButton = document.querySelector('favorite-button');
     favoriteButton.restaurant = { id: 1 };
 
-    console.log(await FavoriteRestaurant.getAllRestaurants());
+    //console.log(await FavoriteRestaurant.getAllRestaurants());
     console.log(document.querySelector('button'));
     expect(
       document.body.querySelector(
