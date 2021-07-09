@@ -1,13 +1,14 @@
 /* eslint-disable no-use-before-define */
 import UrlParser from '../../routes/url-parser';
 import RestaurantModel from '../../models/restaurant';
+import FavoriteRestaurant from '../../models/favorite';
 
 import ErrorPageTemplate from '../templates/ErrorPage';
 import RestaurantDetailTemplate from '../templates/RestaurantDetail';
 
 import PageLoader from '../../utils/page-loader';
 import SnackBarMessage from '../../utils/snackbar-initiator';
-import FavoriteButton from '../../utils/favorite-button-initiator';
+import FavoriteButtonPresenter from '../../presenters/favorite-button-presenter';
 
 const Detail = {
   async render() {
@@ -39,19 +40,18 @@ const Detail = {
       fallBackResult(err);
     }
 
-    function renderResult(restaurant) {
+    async function renderResult(restaurant) {
       container.innerHTML = RestaurantDetailTemplate(restaurant);
-      // FavoriteButton.init({
-      // buttonContainer: document.querySelector(
-      // '#likeButtonContainer'
-      // ),
-      // restaurant,
-      // });
-      container.querySelector('favorite-button').restaurant =
-        restaurant;
 
-      console.log('Button rendered');
-      console.log(container.querySelector('favorite-button'));
+      await FavoriteButtonPresenter.init({
+        favoriteButtonContainer: document.querySelector(
+          '#favoriteButtonContainer'
+        ),
+        favoriteRestaurants: FavoriteRestaurant,
+        restaurant,
+      });
+      //container.querySelector('favorite-button').restaurant =
+      //restaurant;
     }
 
     function fallBackResult(err) {

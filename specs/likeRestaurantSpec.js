@@ -2,9 +2,10 @@ import FavoriteRestaurant from '../src/scripts/models/favorite';
 import * as TestFactories from './helpers/testFactories';
 import '../src/scripts/views/components/favorite-button';
 
-xdescribe('Liking a Restaurant', () => {
+describe('Liking a Restaurant', () => {
   const addLikeButtonContainer = () => {
-    document.body.innerHTML = '<favorite-button></favorite-button>';
+    document.body.innerHTML =
+      '<div id="favoriteButtonContainer"></div>';
   };
 
   beforeEach(() => addLikeButtonContainer());
@@ -29,7 +30,7 @@ xdescribe('Liking a Restaurant', () => {
     FavoriteRestaurant.putRestaurant({ id: 1 });
 
     document
-      .querySelector('button')
+      .querySelector('favorite-button[init="inactive"]')
       .dispatchEvent(new Event('click'));
 
     expect(await FavoriteRestaurant.getAllRestaurants()).toEqual([
@@ -43,7 +44,7 @@ xdescribe('Liking a Restaurant', () => {
     await FavoriteRestaurant.putRestaurant({ id: 1 });
 
     document
-      .querySelector('button')
+      .querySelector('favorite-button[init="inactive"]')
       .dispatchEvent(new Event('click'));
 
     expect(await FavoriteRestaurant.getAllRestaurants()).toEqual([
@@ -55,7 +56,7 @@ xdescribe('Liking a Restaurant', () => {
   it('Should not add the restaurant if it has no id', async () => {
     await TestFactories.createLikeButtonWithRestaurant({});
     document
-      .querySelector('button')
+      .querySelector('favorite-button[init="inactive"]')
       .dispatchEvent(new Event('click'));
 
     expect(await FavoriteRestaurant.getAllRestaurants()).toEqual([]);

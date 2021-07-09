@@ -10,10 +10,9 @@ TODOS
     - [x] Button should not be able to save restaurant to the favorite if the object has been saved
 
   + Unliking Button Testing
-    - [] Button should show "Remove from favorite" when the restaurant has been liked before
-    - [] Button should not show "Add from favorite" when the restaurant has been liked before
-    - [] Button should be able to remove restaurant from favorite
-    - [] Button should be able to remove restaurant from favorite
+    - [x] Button should show "Remove from favorite" when the restaurant has been liked before
+    - [x] Button should not show "Add from favorite" when the restaurant has been liked before
+    - [x] Button should be able to remove restaurant from favorite
 
 
 ~ End-to-end Testing

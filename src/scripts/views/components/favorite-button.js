@@ -1,56 +1,35 @@
 /* eslint-disable class-methods-use-this */
-import FavoriteModel from '../../models/favorite';
 
 class FavoriteButton extends HTMLElement {
   constructor() {
     super();
     this.isAdded = false;
-    this._restaurant = null;
-    this.className = this.getAttribute('class') || '';
+    this.isActive = this.getAttribute('init') || 'inactive';
+    this._clickEvent = null;
   }
 
   connectedCallback() {
-    this.addEventListener('click', (e) => this.clickEvent(e));
-    this.render();
-  }
-
-  async clickEvent(e) {
-    e.stopPropagation();
-    await this.toggleLike();
-  }
-
-  async toggleLike() {
-    await this.renderData();
-    await this.renderState();
-    await this.render();
-  }
-
-  set restaurant(restaurant) {
-    this._restaurant = restaurant;
-    this.renderState().then(() => {
-      this.render();
-      //console.log(this);
-    });
-  }
-
-  async renderData() {
-    const { id } = this._restaurant;
-    if (await this.restaurantExists(id)) {
-      await FavoriteModel.deleteRestaurant(this._restaurant.id);
-    } else {
-      await FavoriteModel.putRestaurant(this._restaurant);
-    }
-  }
-
-  async renderState() {
-    const { id } = this._restaurant;
-    if (await this.restaurantExists(id)) {
+    if (this.isActive == 'active') {
       this.isAdded = true;
     } else {
       this.isAdded = false;
     }
 
-    this.className = this.isAdded ? 'active' : '';
+    this.addEventListener('click', (e) => {
+      this._clickEvent(e);
+      this.toggleLike();
+      this.render();
+    });
+    this.render();
+  }
+
+  set onClickHandler(clickEvent) {
+    this._clickEvent = clickEvent;
+  }
+
+  toggleLike() {
+    this.isAdded = !this.isAdded;
+    this.isActive = this.isAdded ? 'active' : '';
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -59,12 +38,7 @@ class FavoriteButton extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['class'];
-  }
-
-  async restaurantExists(id) {
-    const restaurant = await FavoriteModel.getRestaurant(id);
-    return !!restaurant;
+    return ['active'];
   }
 
   render() {
@@ -75,7 +49,10 @@ class FavoriteButton extends HTMLElement {
             ? 'unlike this restaurant'
             : 'like this restaurant'
         }" 
-        class="favoriteButton ${this.className}">              
+        id="favoriteButton"
+        class="${
+          this.isActive === 'active' ? 'active' : ''
+        }">              
 				${
           this.isAdded
             ? `<i 
@@ -83,7 +60,7 @@ class FavoriteButton extends HTMLElement {
                 style="margin-right: .2em; color: green;">
                </i> Added to favorite`
             : `<i 
-                class="fas fa-plus fa-lg" 
+                class="fas fa-plus fa-sm" 
                 style="margin-right: .2em; color: #fff;">
                </i>
                Add to Favorite`

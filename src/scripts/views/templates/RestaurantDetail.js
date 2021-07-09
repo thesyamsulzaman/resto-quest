@@ -42,8 +42,7 @@ const RestaurantDetail = ({
           ${rating} ( ${customerReviews.length} Reviews )
         </p>            
       
-        <div id="likeButtonContainer">
-          <favorite-button></favorite-button>
+        <div id="favoriteButtonContainer">
         </div>
 
       </div>             
