@@ -1,7 +1,6 @@
 /* eslint-disable no-use-before-define */
 import FavoriteModel from '../../models/favorite';
 import PageLoader from '../../utils/page-loader';
-import ErrorPageTemplate from '../templates/ErrorPage';
 
 import {
   FavoritesTemplate,

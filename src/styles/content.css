@@ -172,6 +172,7 @@ restaurants-wrapper,
 }
 .reviews-card {
   padding: 0.6em 0;
+  overflow: hidden;
 }
 
 .reviews-card-name {

@@ -29,6 +29,7 @@ const SkeletonCards = (count) => {
   for (let i = 0; i < count; i += 1) {
     template += SkeletonCard();
   }
+
   return template;
 };
 

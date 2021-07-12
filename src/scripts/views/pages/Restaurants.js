@@ -3,10 +3,10 @@
 import RestaurantModel from '../../models/restaurant';
 import PageLoader from '../../utils/page-loader';
 
-import ErrorPageTemplate from '../templates/ErrorPage';
 import {
   RestaurantsTemplate,
-  RestaurantsSkeleton,
+  RestaurantsSkeletonTemplate,
+  RestaurantsNetworkErrorTemplate,
 } from '../templates/Restaurants';
 
 const Restaurants = {
@@ -14,7 +14,7 @@ const Restaurants = {
     return `
       <section id="content">                           
         <div class="container containerWithLoader">          
-          ${RestaurantsSkeleton()}
+          ${RestaurantsSkeletonTemplate()}
         </div>          
       </section>
     `;
@@ -42,7 +42,7 @@ const Restaurants = {
     }
 
     function fallBackResult() {
-      container.innerHTML = ErrorPageTemplate();
+      container.innerHTML = RestaurantsNetworkErrorTemplate();
     }
   },
 };

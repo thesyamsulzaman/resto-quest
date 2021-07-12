@@ -1,13 +1,14 @@
-/* eslint-disable no-use-before-define */
-import Hero from '../templates/Hero';
-import Features from '../templates/Features';
-import Feature from '../templates/Feature';
-import RestaurantsList from '../templates/RestaurantsList';
-import Subscription from '../templates/Subscription';
+import {
+  Hero,
+  Features,
+  Feature,
+  RestaurantsList,
+  RestaurantsListNetworkError,
+  Subscription,
+} from '../templates/Home';
 
 import RestaurantModel from '../../models/restaurant';
 import PageLoader from '../../utils/page-loader';
-import ErrorPageTemplate from '../templates/ErrorPage';
 
 const Home = {
   async render() {
@@ -47,7 +48,7 @@ const Home = {
 
     function fallbackResult(err) {
       console.log('Error : ', err);
-      container.innerHTML = ErrorPageTemplate();
+      container.innerHTML = RestaurantsListNetworkError();
     }
   },
 };

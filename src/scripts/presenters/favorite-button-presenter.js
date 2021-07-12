@@ -47,6 +47,7 @@ const favoriteButtonPresenter = {
     await this._favoriteRestaurants.putRestaurant(this._restaurant);
     this._renderButton();
   },
+
   async onRemoveRestaurant(event) {
     await this._favoriteRestaurants.deleteRestaurant(
       this._restaurant.id

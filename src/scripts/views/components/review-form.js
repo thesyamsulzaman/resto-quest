@@ -40,7 +40,7 @@ class ReviewForm extends HTMLElement {
           <textarea class="form-control" id="review" name="review"></textarea>
         </div>
         <div class="form-group">
-          <input type="submit" value="Send" class="submit-button" />
+          <input type="submit" name="submitButton" value="Send" class="submit-button" />
         </div>
       </form>      
     `;

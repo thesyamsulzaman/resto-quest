@@ -5,15 +5,15 @@ const { assets } = global.serviceWorkerOption;
 
 self.addEventListener('install', (event) => {
   console.log('Installing Service Worker ...');
-  //event.waitUntil(CacheHelper.cachingAppShell([...assets, '/']));
+  event.waitUntil(CacheHelper.cachingAppShell([...assets, '/']));
 });
 
 self.addEventListener('activate', (event) => {
   console.log('Activating Service Worker ... ');
-  //event.waitUntil(CacheHelper.deleteOldCache());
+  event.waitUntil(CacheHelper.deleteOldCache());
 });
 
 self.addEventListener('fetch', (event) => {
   console.log('Making a request ...');
-  //event.respondWith(CacheHelper.revalidateCache(event.request));
+  event.respondWith(CacheHelper.revalidateCache(event.request));
 });

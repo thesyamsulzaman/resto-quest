@@ -3,8 +3,10 @@ import UrlParser from '../../routes/url-parser';
 import RestaurantModel from '../../models/restaurant';
 import FavoriteRestaurant from '../../models/favorite';
 
-import ErrorPageTemplate from '../templates/ErrorPage';
-import RestaurantDetailTemplate from '../templates/RestaurantDetail';
+import {
+  RestaurantDetailTemplate,
+  RestaurantsDetailNetworkErrorTemplate,
+} from '../templates/RestaurantDetail';
 
 import PageLoader from '../../utils/page-loader';
 import SnackBarMessage from '../../utils/snackbar-initiator';
@@ -50,8 +52,6 @@ const Detail = {
         favoriteRestaurants: FavoriteRestaurant,
         restaurant,
       });
-      //container.querySelector('favorite-button').restaurant =
-      //restaurant;
     }
 
     function fallBackResult(err) {

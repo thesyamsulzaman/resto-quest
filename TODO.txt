@@ -3,32 +3,35 @@ TODOS
 ~ Integration Testing
 
   + Like Button Testing
+
+    ~ Positive
     - [x] Button show "Add to favorite" when the restaurant hasnt been liked before
-    - [x] Button should not show "Add to favorite" when the restaurant hasnt been liked before
     - [x] Button should be able to save restaurant to the favorite
+
+    ~ Negative
+    - [x] Button should not show "Add to favorite" when the restaurant has been liked before
     - [x] Button should not be able to save restaurant to the favorite if the object is invalid
     - [x] Button should not be able to save restaurant to the favorite if the object has been saved
 
   + Unliking Button Testing
+
+    ~ Positive
     - [x] Button should show "Remove from favorite" when the restaurant has been liked before
+
+    ~ Negative
     - [x] Button should not show "Add from favorite" when the restaurant has been liked before
     - [x] Button should be able to remove restaurant from favorite
-
-
-~ End-to-end Testing
-  + Like Button
-  + Unlike Button
 
 
 ~ Performance Tweak
 
   + Fonts 
-    - [] Font from CDN
+    - [x] Font from CDN
 
   + Bundle JS
-    - [] Code Spliting
-    - [] Minify 
-    - [] Source Map
+    - [x] Code Spliting
+    - [x] Minify 
+    - [x] Source Map
 
   + Home Page
     - [x] Skeleton for Hero Image
@@ -39,3 +42,5 @@ TODOS
   + Restaurants Page
     - [x] Skeleton for Card Images
     - [x] Implement Lazy Load
+
+
