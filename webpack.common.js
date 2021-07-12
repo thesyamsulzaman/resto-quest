@@ -54,7 +54,6 @@ module.exports = {
         },
       ],
     }),
-    new BundleAnalyzerPlugin(),
     new WebpackPwaManifest({
       name: 'Resto Quest',
       short_name: 'resto-quest',
