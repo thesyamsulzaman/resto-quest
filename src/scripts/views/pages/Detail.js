@@ -56,7 +56,7 @@ const Detail = {
 
     function fallBackResult(err) {
       console.log('Error : ', err);
-      container.innerHTML = ErrorPageTemplate();
+      container.innerHTML = RestaurantsDetailNetworkErrorTemplate();
     }
 
     async function onReviewFormSubmit(event) {

@@ -1,7 +1,6 @@
 /* eslint-disable no-use-before-define */
 
 import RestaurantModel from '../../models/restaurant';
-import PageLoader from '../../utils/page-loader';
 
 import {
   RestaurantsTemplate,
@@ -22,11 +21,9 @@ const Restaurants = {
 
   async afterRender() {
     const container = document.querySelector('#content .container');
-    //PageLoader.show();
 
     try {
       const restaurants = await RestaurantModel.getAll();
-      //PageLoader.hide();
       renderResult(restaurants);
     } catch (err) {
       console.log('Error : ', err);

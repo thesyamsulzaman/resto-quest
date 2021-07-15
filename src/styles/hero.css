@@ -9,39 +9,16 @@
   overflow: hidden;
 }
 
-#hero::before {
-  content: '';
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
 
-  background-image: url('../public/images/hero.webp');
-  background-size: cover;
-  background-position: 0% 30%;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
 
+.hero-image-large, .hero-image-small {
+  position:absolute;
+  bottom:0;
+  left:0;
   min-height: 100vh;
   height: 100%;
   width: 100%;
-}
-
-#hero.loading::before {
-  background-image: none;
-}
-
-#hero.loading::after {
-  content: 'anjing benat';
-  display: block;
-  background: linear-gradient(90deg, transparent, #ccc, transparent);
-  transform: translateX(-100%);
-  animation: loading 1s infinite;
-
-  min-height: 100vh;
-  height: 100%;
-  width: 100%;
+  object-fit:cover;
 }
 
 .hero-jumbotron-content {

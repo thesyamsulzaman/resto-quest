@@ -2,6 +2,12 @@ import SkeletonCards from './SkeletonCard';
 
 const Hero = () => `
   <section id="hero" class="" alt="">
+    <picture class="hero-image">
+      <source class="hero-image-small" media="(max-width: 768px)" srcset="./images/hero-small.jpg" alt="">
+      </source>
+      <img class="hero-image-large" src="./images/hero-large.jpg" alt=""/>
+    </picture>
+    <source></source>
     <div class="hero-jumbotron-overlay"></div>
     <div class="hero-jumbotron-content container">
       <div class="hero-jumbotron-content-texts">
@@ -20,13 +26,14 @@ const Features = () => `
     <div class="feature-cards container">
     
       <div class="feature-card">
-        <img
-          class="feature-card-img"
-          src="./images/feature_1.jpg"
-          height="380"
-          width="300"
-          alt=""
-        />
+
+        <picture class="hero-image">
+          <source class="feature-card-img" media="(max-width: 768px)" srcset="./images/feature_1-small.jpg" alt="">
+          </source>
+          <img class="feature-card-img" src="./images/feature_1-large.jpg" alt=""/>
+        </picture>
+
+
         <div class="feature-card-description">
           <p class="feature-card-description-header">
             Qualified and Professionals
@@ -38,13 +45,13 @@ const Features = () => `
       </div>
 
       <div class="feature-card">
-        <img
-          class="feature-card-img"
-          src="./images/feature_2.jpg"
-          height="380"
-          width="300"
-          alt=""
-        />
+
+        <picture class="hero-image">
+          <source class="feature-card-img" media="(max-width: 768px)" srcset="./images/feature_2-small.jpg" alt="">
+          </source>
+          <img class="feature-card-img" src="./images/feature_2-large.jpg" alt="" />
+        </picture>
+
         <div class="feature-card-description">
           <p class="feature-card-description-header">
             High Quality dairy products
@@ -56,13 +63,11 @@ const Features = () => `
       </div>
 
       <div class="feature-card">
-        <img
-          class="feature-card-img"
-          src="./images/feature_3.jpg"
-          height="380"
-          width="300"
-          alt=""
-        />
+        <picture class="hero-image">
+          <source class="feature-card-img" media="(max-width: 768px)" srcset="./images/feature_3-small.jpg" alt="">
+          </source>
+          <img class="feature-card-img" src="./images/feature_3-large.jpg" alt="" />
+        </picture>
         <div class="feature-card-description">
           <p class="feature-card-description-header">
             24 Hours always on
@@ -80,7 +85,7 @@ const Features = () => `
 const Feature = () => `
   <section id="feature">
     <div class="feature container">          
-      <img class="feature-img" src="images/access-everywhere.svg" alt="">            
+      <img class="feature-img" src="images/access-everywhere.svg" width="300" height="500" alt="">            
       <div class="feature-info">
         <h2 class="feature-info-header">Available in 20+ locations, access it anywhere and anytime.</h2>
         <div class="feature-info-body">

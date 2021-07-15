@@ -1,6 +1,5 @@
 /* eslint-disable no-use-before-define */
 import FavoriteModel from '../../models/favorite';
-import PageLoader from '../../utils/page-loader';
 
 import {
   FavoritesTemplate,
@@ -22,11 +21,8 @@ const Favorites = {
   async afterRender() {
     const container = document.querySelector('#content .container');
 
-    //PageLoader.show();
-
     try {
       const restaurants = await FavoriteModel.getAllRestaurants();
-      //PageLoader.hide();
       if (restaurants.length > 0) {
         renderResult(restaurants);
       } else {

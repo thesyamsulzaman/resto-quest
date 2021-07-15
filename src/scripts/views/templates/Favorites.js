@@ -20,7 +20,7 @@ const FavoritesSkeleton = () => `
 
 const FavoritesEmpty = () => `
   <div class="emptyPage">
-    <img src="/images/plat.svg" width="300"/>
+    <img src="/images/plat.svg" width="300" />
     <h2>You havent booked any Restaurants</h2>
   </div>
 `;
