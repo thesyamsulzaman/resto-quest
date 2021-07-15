@@ -3,9 +3,9 @@ import SkeletonCards from './SkeletonCard';
 const Hero = () => `
   <section id="hero" class="" alt="">
     <picture class="hero-image">
-      <source class="hero-image-small" media="(max-width: 768px)" srcset="./images/hero-small.jpg" alt="">
+      <source class="hero-image-small" media="(max-width: 768px)" srcset="images/hero-small.jpg" alt="">
       </source>
-      <img class="hero-image-large" src="./images/hero-large.jpg" alt=""/>
+      <img class="hero-image-large" src="images/hero-large.jpg" alt=""/>
     </picture>
     <source></source>
     <div class="hero-jumbotron-overlay"></div>
@@ -28,9 +28,9 @@ const Features = () => `
       <div class="feature-card">
 
         <picture class="hero-image">
-          <source class="feature-card-img" media="(max-width: 768px)" srcset="./images/feature_1-small.jpg" alt="">
+          <source class="feature-card-img" media="(max-width: 768px)" srcset="images/feature_1-small.jpg" alt="">
           </source>
-          <img class="feature-card-img" src="./images/feature_1-large.jpg" alt=""/>
+          <img class="feature-card-img" src="images/feature_1-large.jpg" alt=""/>
         </picture>
 
 
@@ -47,9 +47,9 @@ const Features = () => `
       <div class="feature-card">
 
         <picture class="hero-image">
-          <source class="feature-card-img" media="(max-width: 768px)" srcset="./images/feature_2-small.jpg" alt="">
+          <source class="feature-card-img" media="(max-width: 768px)" srcset="images/feature_2-small.jpg" alt="">
           </source>
-          <img class="feature-card-img" src="./images/feature_2-large.jpg" alt="" />
+          <img class="feature-card-img" src="images/feature_2-large.jpg" alt="" />
         </picture>
 
         <div class="feature-card-description">
@@ -64,9 +64,9 @@ const Features = () => `
 
       <div class="feature-card">
         <picture class="hero-image">
-          <source class="feature-card-img" media="(max-width: 768px)" srcset="./images/feature_3-small.jpg" alt="">
+          <source class="feature-card-img" media="(max-width: 768px)" srcset="images/feature_3-small.jpg" alt="">
           </source>
-          <img class="feature-card-img" src="./images/feature_3-large.jpg" alt="" />
+          <img class="feature-card-img" src="images/feature_3-large.jpg" alt="" />
         </picture>
         <div class="feature-card-description">
           <p class="feature-card-description-header">
